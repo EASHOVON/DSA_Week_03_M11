@@ -30,7 +30,10 @@ int main()
     for (int i = 1; i < n; i++)
     {
         cout << "Iteration : " << i << endl;
-        // Redundent Modification
+        // Redundent testing inside iteration Modification
+
+        // Redundent iteration Modification
+        int flag = 0;
         for (int j = 0; j < n - i; j++)
         {
             // Assending order
@@ -39,9 +42,12 @@ int main()
                 int temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
+                flag = 1;
             }
             printArray(arr, n);
         }
+        if (flag == 0)
+            break;
     }
 
     cout << "After Sort: ";
